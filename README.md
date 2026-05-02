@@ -4,8 +4,9 @@
 源码:https://github.com/NativeStar/KernelSUGrantToast
 
 ### 截图
-![](./mdAssets/1000132279.png)
-![](./mdAssets/1000130680.png)
+<img src="https://raw.githubusercontent.com/KernelSU-Modules-Repo/ksuGrantToast/refs/heads/main/mdAssets/1000130680.png">
+
+<img src="https://raw.githubusercontent.com/KernelSU-Modules-Repo/ksuGrantToast/refs/heads/main/mdAssets/1000132279.png">
 ### 安装
 在Release中下载模块包后进入KernelSU中选中模块包安装即可
 
