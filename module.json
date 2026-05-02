@@ -1,0 +1,12 @@
+{
+    "metamodule": false,
+    "summary": "让KSU像magisk一样弹出'已被授予超级用户权限' Toast/Show a root granted toast like Magisk.Require SuLog enabled.",
+    "sourceUrl": "https://github.com/NativeStar/KernelSUGrantToast",
+    "additionalAuthors": [
+        {
+            "type": "add",
+            "name": "NativeStar",
+            "link": "https://github.com/NativeStar"
+        }
+    ]
+}
