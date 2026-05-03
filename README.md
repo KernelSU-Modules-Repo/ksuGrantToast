@@ -7,6 +7,11 @@
 <img src="https://raw.githubusercontent.com/KernelSU-Modules-Repo/ksuGrantToast/refs/heads/main/mdAssets/1000130680.png">
 
 <img src="https://raw.githubusercontent.com/KernelSU-Modules-Repo/ksuGrantToast/refs/heads/main/mdAssets/1000132279.png">
+
+### 功能
+- 在应用提权时弹出Toast提醒
+- 支持自定义提醒文本
+- 支持忽略指定应用的提权提醒
 ### 安装
 在Release中下载模块包后进入KernelSU中选中模块包安装即可
 
