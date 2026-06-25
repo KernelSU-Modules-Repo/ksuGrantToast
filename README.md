@@ -40,4 +40,14 @@ KernelSU在开启SuLog功能后 会拉起一个常驻的ksud进程用于接收�
 (理论上也可以不杀死进程 通过监听日志文件变化实现获取信息 但这么做性能可能不佳)
 
 ### 最后
+模块娱乐为主
+
 感谢使用
+
+<a href="https://www.star-history.com/?repos=NativeStar%2FKernelSUGrantToast&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=NativeStar/KernelSUGrantToast&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=NativeStar/KernelSUGrantToast&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=NativeStar/KernelSUGrantToast&type=date&legend=top-left" />
+ </picture>
+</a>
