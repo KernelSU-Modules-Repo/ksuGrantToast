@@ -1,53 +1,58 @@
 # KernelSU Grant Toast
-##### 让KernelSU像Magisk一样弹出'授予超级用户权限' Toast
 
-源码:https://github.com/NativeStar/KernelSUGrantToast
+[简体中文](https://github.com/NativeStar/KernelSUGrantToast/blob/master/README_zh.md)
+[English](https://github.com/NativeStar/KernelSUGrantToast/blob/master/README.md)
 
-### 截图
+##### Make KernelSU display a "Superuser access granted" toast, like Magisk.
+
+### Screenshots
+
 <img src="https://raw.githubusercontent.com/KernelSU-Modules-Repo/ksuGrantToast/refs/heads/main/mdAssets/1000130680.png">
 
 <img src="https://raw.githubusercontent.com/KernelSU-Modules-Repo/ksuGrantToast/refs/heads/main/mdAssets/1000132279.png">
 
-### 功能
-- 在应用提权时弹出Toast提醒
-- 支持自定义提醒文本
-- 支持忽略指定应用的提权提醒
-### 安装
-在Release中下载模块包后进入KernelSU中选中模块包安装即可
+### Features
 
-安装完成后需要重启生效 记得在重启前确保SuLog功能已启用
+- Shows a toast notification when an app gains elevated privileges.
+- Supports custom notification text.
+- Supports ignoring privilege-grant notifications for specified apps.
 
-该模块不依赖Zygisk和MetaModule
-### 兼容性提醒
-模块仅限最新(支持SuLog的版本)KernelSU使用 且仅在官方版本上测试
+### Installation
 
-对其他分支版本兼容性未知 理论上如果未对SuLog功能进行修改就能正常工作
-### 原理
-KernelSU在开启SuLog功能后 会拉起一个常驻的ksud进程用于接收由内核转发的日志数据并将其写入文件
+Download the module package from the Releases page, then select and install it in KernelSU.
 
-该数据实时性极高 完全足够用作事件监测
+After installation, reboot the device for the module to take effect.
 
-安装模块后 当设备启动完成 模块将杀死原有负责日志写入的ksud进程并获取用于接收相关数据的文件描述符(该描述符只能被一个进程持有 故必须杀死ksud进程)接手事件处理
+This module does not depend on Zygisk or MetaModule.
 
-如果发现有Android应用被授予root权限 模块将获取该应用的相关信息 并在满足条件时弹出提醒
-### 注意
-由于原本负责写入日志文件的进程在设备启动完成后即被杀死 原本的SuLog将停止记录
+### Compatibility Notes
 
-并且为避免文件堆积 在模块启动完成后会将旧的SuLog日志文件删除
+This module is intended only for the latest version of KernelSU that supports Su logging, and has only been tested with the official release.
 
-因此你将无法在管理器中查看SuLog数据
+Compatibility with other forks is unknown. In theory, it should work as long as their Su logging implementation has not been modified.
 
-(理论上也可以不杀死进程 通过监听日志文件变化实现获取信息 但这么做性能可能不佳)
+### How It Works
 
-### 最后
-模块娱乐为主
+When Su logging is enabled, KernelSU starts a persistent process that receives log data forwarded by the kernel and writes it to a file.
 
-感谢使用
+This data is highly real-time, making it fully suitable for event monitoring.
 
-<a href="https://www.star-history.com/?repos=NativeStar%2FKernelSUGrantToast&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=NativeStar/KernelSUGrantToast&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=NativeStar/KernelSUGrantToast&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=NativeStar/KernelSUGrantToast&type=date&legend=top-left" />
- </picture>
-</a>
+After the module is installed and the device has finished booting, the module kills the original process responsible for writing the logs. It then obtains the file descriptor used to receive the relevant data (only one process can hold this descriptor, so the original process must be terminated) and takes over event handling.
+
+If an Android app is found to have been granted root access, the module retrieves information about the app and displays a notification when the configured conditions are met.
+
+### Notes
+
+Because the process that originally writes the log file is terminated after the device finishes booting, Su logs will no longer be recorded.
+
+To prevent files from accumulating, the module also deletes old log files after it starts.
+
+As a result, you will no longer be able to view Su log data in the manager.
+
+(In theory, the original process could be left running and the module could obtain information by monitoring changes to the log file, but this may have poor performance.)
+
+### Final Note
+
+This module is mainly for fun.
+
+Thanks for using it.
